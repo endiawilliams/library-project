@@ -1,192 +1,192 @@
 <!DOCTYPE html>
 <html>
 
-<head>
-    <title>
-        Library Project
-    </title>
-    <style>
-        .card,
-        .modal-content {
-            padding: 6px 8px;
-            width: 400px;
-            color: #333333;
-            font-family: arial, helvetica, sans-serif;
-            background-color: white;
-            margin: 8px;
-            border-radius: 3px;
-        }
+    <head>
+        <title>
+            Library Project
+        </title>
+        <style>
+            .card,
+            .modal-content {
+                padding: 6px 8px;
+                width: 400px;
+                color: #333333;
+                font-family: arial, helvetica, sans-serif;
+                background-color: white;
+                margin: 8px;
+                border-radius: 3px;
+            }
 
-        body {
-            background-color: #2c7741;
-        }
+            body {
+                background-color: #2c7741;
+            }
 
-        #container,
-        .modal {
-            position: absolute;
-            left: 33%;
-            background-color: #235f34;
-            border-radius: 3px;
-            color: white;
-            font-family: arial, helvetica, sans-serif;
-            margin-bottom: 8px;
-            text-align: left;
-        }
+            #container,
+            .modal {
+                position: absolute;
+                left: 33%;
+                background-color: #235f34;
+                border-radius: 3px;
+                color: white;
+                font-family: arial, helvetica, sans-serif;
+                margin-bottom: 8px;
+                text-align: left;
+            }
 
-        #addbook {
-            background-color: #2C7741;
-            color: white;
-            font-family: arial, helvetica, sans-serif;
-            margin-bottom: 8px;
-            border-radius: 3px;
-            border-color: #195b30;
-            font-family: arial, helvetica, sans-serif;
-            font-size: 12px;
-            padding-top: 6px;
-            padding-bottom: 6px;
-            font-weight: bold;
-            border-width: 2px;
-            margin-left: 33%;
-        }
+            #addbook {
+                background-color: #2C7741;
+                color: white;
+                font-family: arial, helvetica, sans-serif;
+                margin-bottom: 8px;
+                border-radius: 3px;
+                border-color: #195b30;
+                font-family: arial, helvetica, sans-serif;
+                font-size: 12px;
+                padding-top: 6px;
+                padding-bottom: 6px;
+                font-weight: bold;
+                border-width: 2px;
+                margin-left: 33%;
+            }
 
-        .fa-plus {
-            padding-right: 6px;
-        }
+            .fa-plus {
+                padding-right: 6px;
+            }
 
-        .inputs {
-            line-height: 30px;
-        }
+            .inputs {
+                line-height: 30px;
+            }
 
-        #submit {
-            margin-left: 347px;
-            margin-bottom: 5px;
-            background-color: #2C7741;
-            color: white;
-            font-family: arial, helvetica, sans-serif;
-            border-radius: 3px;
-            border-color: #195b30;
-            font-family: arial, helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-            border-width: 2px;
-            padding: 4px 6px;
-        }
+            #submit {
+                margin-left: 347px;
+                margin-bottom: 5px;
+                background-color: #2C7741;
+                color: white;
+                font-family: arial, helvetica, sans-serif;
+                border-radius: 3px;
+                border-color: #195b30;
+                font-family: arial, helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                border-width: 2px;
+                padding: 4px 6px;
+            }
 
-        #popupform {
-            display: none;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.4);
-        }
+            #popupform {
+                display: none;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.4);
+            }
 
-        #modalform {
-            margin-left: 33.25%;
-            margin-top: 50px;
-            width: 408px;
-        }
+            #modalform {
+                margin-left: 33.25%;
+                margin-top: 50px;
+                width: 408px;
+            }
 
-        #del {
-            float: right;
-            background-color: #2C7741;
-            color: white;
-            font-family: arial, helvetica, sans-serif;
-            border-radius: 3px;
-            border-color: #195b30;
-            font-family: arial, helvetica, sans-serif;
-            font-size: 12px;
-            font-weight: bold;
-            border-width: 2px;
-        }
-    </style>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
-        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-</head>
+            #del {
+                float: right;
+                background-color: #2C7741;
+                color: white;
+                font-family: arial, helvetica, sans-serif;
+                border-radius: 3px;
+                border-color: #195b30;
+                font-family: arial, helvetica, sans-serif;
+                font-size: 12px;
+                font-weight: bold;
+                border-width: 2px;
+            }
+        </style>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+            integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    </head>
 
-<body>
-    <button id="addbook"><i class="fa fa-plus"></i>Add Book</button>
+    <body>
+        <button id="addbook"><i class="fa fa-plus"></i>Add Book</button>
 
-    <div id="popupform" class="modal">
-        <div class="modal-content" id="modalform">
-            <form id="newBook">
-                <b class="inputs">Title: </b><input type="text" name="title"><br>
-                <b class="inputs">Author: </b><input type="text" name="author"><br>
-                <b class="inputs">Pages: </b><input type="number" name="pages"><br>
-                <b class="inputs">Read: </b><input type="checkbox" name="read"><br>
-            </form>
-            <button id="submit">Submit</button>
+        <div id="popupform" class="modal">
+            <div class="modal-content" id="modalform">
+                <form id="newBook">
+                    <b class="inputs">Title: </b><input type="text" name="title"><br>
+                    <b class="inputs">Author: </b><input type="text" name="author"><br>
+                    <b class="inputs">Pages: </b><input type="number" name="pages"><br>
+                    <b class="inputs">Read: </b><input type="checkbox" name="read"><br>
+                </form>
+                <button id="submit">Submit</button>
+            </div>
         </div>
-    </div>
 
-    <div id="container">
-    </div>
+        <div id="container">
+        </div>
 
-    <script>
-        let myLibrary = [];
+        <script>
+            let myLibrary = [];
 
-        function Book(title, author, pages, read) {
-            this.title = title
-            this.author = author
-            this.pages = pages
-            this.read = read
-        }
+            function Book(title, author, pages, read) {
+                this.title = title
+                this.author = author
+                this.pages = pages
+                this.read = read
+            }
 
-        function addBookToLibrary(title, author, pages, read) {
-            let newBook = new Book(title, author, pages, read)
-            myLibrary.push(newBook)
-        }
+            function addBookToLibrary(title, author, pages, read) {
+                let newBook = new Book(title, author, pages, read)
+                myLibrary.push(newBook)
+            }
 
-        function render() {
-            document.getElementById('container').innerHTML = "";
-            for (let i = 0; i < myLibrary.length; i++) {
-                let userBook = myLibrary[i];
-                let newDiv = document.createElement('div');
-                if(userBook.read){
-                    checked = "checked"
-                } else{
-                    checked = ""
+            function render() {
+                document.getElementById('container').innerHTML = "";
+                for (let i = 0; i < myLibrary.length; i++) {
+                    let userBook = myLibrary[i];
+                    let newDiv = document.createElement('div');
+                    if(userBook.read){
+                        checked = "checked"
+                    } else{
+                        checked = ""
+                    }
+                    newDiv.classList.add('card');
+                    newDiv.innerHTML = `<b>Title:</b> ${userBook.title} <br>
+                                        <b>Author:</b> ${userBook.author} <br>
+                                        <b>Pages:</b> ${userBook.pages} <br>
+                                        <b>Read:</b> <input type="checkbox"${checked}>
+                                        <button onclick="del(${i})" id="del"><i class="fa fa-trash"></i></button>`;
+                    document.getElementById('container').appendChild(newDiv);
                 }
-                newDiv.classList.add('card');
-                newDiv.innerHTML = `<b>Title:</b> ${userBook.title} <br>
-                                    <b>Author:</b> ${userBook.author} <br>
-                                    <b>Pages:</b> ${userBook.pages} <br>
-                                    <b>Read:</b> <input type="checkbox"${checked}>
-                                    <button onclick="del(${i})" id="del"><i class="fa fa-trash"></i></button>`;
-                document.getElementById('container').appendChild(newDiv);
             }
-        }
 
-        function del(i){
-            myLibrary.splice(i,1);
-            render()
-        }
+            function del(i){
+                myLibrary.splice(i,1);
+                render()
+            }
 
-        let modal = document.getElementById("popupform");
+            let modal = document.getElementById("popupform");
 
-        let addBook = document.getElementById("addbook");
-        addBook.onclick = function () {
-            modal.style.display = "block";
-        }
+            let addBook = document.getElementById("addbook");
+            addBook.onclick = function () {
+                modal.style.display = "block";
+            }
 
-        let submitBtn = document.getElementById("submit");
-        submitBtn.onclick = function () {
-            let form = document.getElementById("newBook");
-            addBookToLibrary(form.title.value,form.author.value,
-                            form.pages.value,form.read.checked);
-            modal.style.display = "none";
-            render();
-        }
-
-        modal.onclick = function (event) {
-            if (event.target == modal) {
+            let submitBtn = document.getElementById("submit");
+            submitBtn.onclick = function () {
+                let form = document.getElementById("newBook");
+                addBookToLibrary(form.title.value,form.author.value,
+                                form.pages.value,form.read.checked);
                 modal.style.display = "none";
+                render();
             }
-        }
-    </script>
-</body>
+
+            modal.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+        </script>
+    </body>
 
 </html>
